@@ -1,6 +1,7 @@
 
 let canvas = document.querySelector('canvas')
 let ctx = canvas.getContext('2d')
+let pointsDisplay = document.getElementById('points-display')
 
 
 let width = 400;
@@ -16,6 +17,7 @@ canvas.height = height;
 class Game {
     constructor (timer){
         this.timer = timer
+        this.points = 0
     }
     setup(){
         this.snake = new Snake()
@@ -40,6 +42,7 @@ class Game {
             this.snake.xSpeed = scale;
             this.snake.ySpeed = 0;
         }
+        
         })
     }
 
@@ -53,10 +56,11 @@ class Game {
     
     draw() {
         ctx.clearRect (0, 0, width, height)
-        this.snake.draw()
+        this.eat()
         this.snake.passBorders()
         this.food.draw()
-        this.eat()
+        this.snake.draw()
+        
     }
 
     stop() {
@@ -67,6 +71,8 @@ class Game {
         if (this.snake.x == this.food.x && this.snake.y == this.food.y) {
             this.food.setup()
             this.food.draw()
+            this.points++
+            pointsDisplay.innerText = this.points
         }
     }
 }
@@ -123,3 +129,7 @@ class Food {
 
 let game = new Game(500)
 
+let btnStart = document.getElementById('startBtn');
+btnStart.addEventListener('click', () => {
+    game.start()
+})
