@@ -54,12 +54,20 @@ class Game {
     draw() {
         ctx.clearRect (0, 0, width, height)
         this.snake.draw()
+        this.snake.passBorders()
         this.food.draw()
+        this.eat()
     }
 
     stop() {
         clearInterval(this.gameInterval)
         console.log("snake dead")
+    }
+    eat() {
+        if (this.snake.x == this.food.x && this.snake.y == this.food.y) {
+            this.food.setup()
+            this.food.draw()
+        }
     }
 }
 
@@ -82,6 +90,21 @@ class Snake {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
     }
+    passBorders() {
+        if (this.x > width - scale) {
+            this.x = 0
+        }
+        if (this.x < 0) {
+            this.x = width 
+        }
+        if (this.y > height - scale) {
+            this.y = 0
+        }
+        if (this.y < 0) {
+            this.y = height
+        }
+    }
+    
 }
 
 class Food {
