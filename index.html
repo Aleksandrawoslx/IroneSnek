@@ -1,56 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake</title>
-    <link rel="stylesheet" href="./main.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
     <div class="container">
-            <div class="logo-wrapper" >
-        </div>
-       <div class="game-wrapper hidden">
+      <div class="logo-wrapper"></div>
+      <div class="game-wrapper hidden">
         <canvas></canvas>
-       </div>
-        <div class="game-over hidden">
-        <img width="500px"  src="./gameover.png" alt="">
+      </div>
+      <div class="game-over hidden">
+        <img width="500px" src="./imgs/gameover.png" alt="" />
+      </div>
+      <div class="game-start">
+        <img width="500px" src="./imgs/gamestart.png" alt="" />
+      </div>
+
+      <div class="stats">
+        <div>
+          <img id="slow" width="50px" src="./imgs/slowmode.png" alt="" />
+          <img id="fast" width="50px" src="./imgs/fastmode.png" alt="" />
         </div>
-        <div class="game-start">
-            <img width="500px"  src="./gamestart.png" alt="">
-            </div>
-
-        <div class="stats" >
-           
-           <div>
-            <button type="button" id="startBtn" > Play</button>
-           </div>
-           <div id="points" >
-            <h5 id="points-display"></h5>
+        <div id="points">
+          <h5 id="points-display"></h5>
         </div>
-           
-        </div>      
-            <div >
-                <iframe class="gifs hidden" src="https://giphy.com/embed/gKNbeZ9T2roA64td3M" height="240" frameBorder="0"  allowFullScreen></iframe>
-            </div>
-
-        
-
-       
-       
-
-
+      </div>
+      <div>
+        <iframe
+          class="gifs hidden"
+          src="https://giphy.com/embed/gKNbeZ9T2roA64td3M"
+          height="240"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
+  </body>
 
-
-    
-      
-
-
-    
-</body>
-
-<script src="./index.js"></script>
+  <script src="./data-gifs.js"></script>
+  <script src="./index.js"></script>
 </html>

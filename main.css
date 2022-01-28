@@ -59,3 +59,12 @@ button {
   font-family: Poppins;
   
 }
+#slow{
+    margin-right: 50px;
+    border-radius: 10%;
+}   
+
+#fast{
+    margin-right: 50px;
+    border-radius: 10%;
+}   
